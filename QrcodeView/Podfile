@@ -1,0 +1,4 @@
+use_frameworks!
+target ‘QrcodeView’ do
+pod 'Masonry', '~> 1.0.1'
+end
