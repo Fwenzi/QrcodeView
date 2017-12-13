@@ -10,7 +10,7 @@
 #import "QrcodeView.h"
 #import <Masonry/Masonry.h>
 
-@interface ViewController ()
+@interface ViewController ()<QrcodeViewDelegate>
 
 @property (nonatomic, strong) QrcodeView *qrcodeView;
 
@@ -21,10 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    QrcodeView *view=[[QrcodeView alloc]initWithFrame:CGRectNull scanImg:[UIImage imageNamed:@"scan"] lineImg:[UIImage imageNamed:@"scanRectangle"]];
-    [view createTopView:@"xxx" backImg:[UIImage imageNamed:@"back2"]];
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.qrcodeView=[[QrcodeView alloc]initWithFrame:CGRectNull scanImg:[UIImage imageNamed:@"scan"] lineImg:[UIImage imageNamed:@"scanRectangle"]];
+    [self.qrcodeView createTopView:@"xxx" backImg:[UIImage imageNamed:@"back2"]];
+    self.qrcodeView.qrcodeViewDelegate=self;
+    [self.view addSubview:self.qrcodeView];
+    [self.qrcodeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
@@ -36,5 +37,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)QrcodeViewBackStr:(NSString *)backStr ifSuccess:(BOOL)ifSuccess{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"扫描结果" message:backStr preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.qrcodeView reStartRunning];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end

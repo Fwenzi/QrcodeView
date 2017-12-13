@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol QrcodeViewDelegate <NSObject>
+
+/** 返回参数 */
+-(void)QrcodeViewBackStr:(NSString *)backStr ifSuccess:(BOOL)ifSuccess;
+
+@end
+
 @interface QrcodeView : UIView
+
+@property (nonatomic, weak)id<QrcodeViewDelegate>qrcodeViewDelegate;
 
 /** 初始化 */
 -(instancetype)initWithFrame:(CGRect)frame scanImg:(UIImage *)scanImg lineImg:(UIImage *)lineImg;
@@ -18,5 +27,8 @@
 
 /** 头部返回事件 */
 @property (nonatomic) dispatch_block_t backBlock;
+
+/** 重新扫描 */
+-(void)reStartRunning;
 
 @end

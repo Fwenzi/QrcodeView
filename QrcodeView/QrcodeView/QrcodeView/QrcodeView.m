@@ -145,11 +145,9 @@
 {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     if (device==nil) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"设备没有摄像头" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-        }]];
-//        [self presentViewController:alert animated:YES completion:nil];
+        if (_qrcodeViewDelegate && [_qrcodeViewDelegate respondsToSelector:@selector(QrcodeViewBackStr:ifSuccess:)]) {
+            [_qrcodeViewDelegate QrcodeViewBackStr:@"设备没有摄像头" ifSuccess:NO];
+        }
         return;
     }
     // Device
@@ -211,22 +209,24 @@
         for (id temp in arry) {
             NSLog(@"%@",temp);
         }
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"扫描结果" message:stringValue preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            if (_session != nil && timer != nil) {
-                [_session startRunning];
-                [timer setFireDate:[NSDate date]];
-            }
-        }]];
-//        [self presentViewController:alert animated:YES completion:nil];
+        if (_qrcodeViewDelegate && [_qrcodeViewDelegate respondsToSelector:@selector(QrcodeViewBackStr:ifSuccess:)]) {
+            [_qrcodeViewDelegate QrcodeViewBackStr:stringValue ifSuccess:YES];
+        }
         
     } else {
-        NSLog(@"无扫描信息");
+        if (_qrcodeViewDelegate && [_qrcodeViewDelegate respondsToSelector:@selector(QrcodeViewBackStr:ifSuccess:)]) {
+            [_qrcodeViewDelegate QrcodeViewBackStr:@"无扫描信息" ifSuccess:NO];
+        }
         return;
     }
     
 }
 
+-(void)reStartRunning{
+    if (_session != nil && timer != nil) {
+        [_session startRunning];
+        [timer setFireDate:[NSDate date]];
+    }
+}
 
 @end
