@@ -29,3 +29,5 @@
 
 @end
 ```
+
+![](https://github.com/Fwenzi/QrcodeView/blob/master/img/IMG_0017.PNG)
