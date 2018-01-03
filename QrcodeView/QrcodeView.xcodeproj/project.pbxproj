@@ -17,6 +17,7 @@
 		8E15DA441FE0BD8800E9D5B1 /* QrcodeViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15DA431FE0BD8800E9D5B1 /* QrcodeViewUITests.m */; };
 		8E15DA531FE0BDB300E9D5B1 /* QrcodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15DA521FE0BDB300E9D5B1 /* QrcodeView.m */; };
 		8E15DA561FE0C0AA00E9D5B1 /* UILabel+Masonry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E15DA541FE0C0AA00E9D5B1 /* UILabel+Masonry.m */; };
+		8EDE76AC1FFCC9EB0050333F /* GetIpAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE76AB1FFCC9EB0050333F /* GetIpAddress.m */; };
 		CF192E1250BE24387684546B /* Pods_QrcodeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3529467600E129D9D018E7C2 /* Pods_QrcodeView.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		8E15DA521FE0BDB300E9D5B1 /* QrcodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QrcodeView.m; sourceTree = "<group>"; };
 		8E15DA541FE0C0AA00E9D5B1 /* UILabel+Masonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Masonry.m"; sourceTree = "<group>"; };
 		8E15DA551FE0C0AA00E9D5B1 /* UILabel+Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Masonry.h"; sourceTree = "<group>"; };
+		8EDE76AA1FFCC9EB0050333F /* GetIpAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetIpAddress.h; sourceTree = "<group>"; };
+		8EDE76AB1FFCC9EB0050333F /* GetIpAddress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetIpAddress.m; sourceTree = "<group>"; };
 		98F67DEB20EA65CFE60221AB /* Pods-QrcodeView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrcodeView.release.xcconfig"; path = "Pods/Target Support Files/Pods-QrcodeView/Pods-QrcodeView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +139,8 @@
 				8E15DA201FE0BD8800E9D5B1 /* AppDelegate.m */,
 				8E15DA221FE0BD8800E9D5B1 /* ViewController.h */,
 				8E15DA231FE0BD8800E9D5B1 /* ViewController.m */,
+				8EDE76AA1FFCC9EB0050333F /* GetIpAddress.h */,
+				8EDE76AB1FFCC9EB0050333F /* GetIpAddress.m */,
 				8E15DA251FE0BD8800E9D5B1 /* Main.storyboard */,
 				8E15DA281FE0BD8800E9D5B1 /* Assets.xcassets */,
 				8E15DA2A1FE0BD8800E9D5B1 /* LaunchScreen.storyboard */,
@@ -368,6 +373,7 @@
 				8E15DA241FE0BD8800E9D5B1 /* ViewController.m in Sources */,
 				8E15DA561FE0C0AA00E9D5B1 /* UILabel+Masonry.m in Sources */,
 				8E15DA2F1FE0BD8800E9D5B1 /* main.m in Sources */,
+				8EDE76AC1FFCC9EB0050333F /* GetIpAddress.m in Sources */,
 				8E15DA211FE0BD8800E9D5B1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

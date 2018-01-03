@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "QrcodeView.h"
 #import <Masonry/Masonry.h>
+#import "GetIpAddress.h"
 
 @interface ViewController ()<QrcodeViewDelegate>
 
@@ -28,6 +29,9 @@
     [self.qrcodeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    NSString *ipStr = [[GetIpAddress getIPAddresses] objectForKey:@"en0/ipv4"];
+    NSLog(@"%@",ipStr);
     
 }
 
