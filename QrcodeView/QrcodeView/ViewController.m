@@ -24,6 +24,7 @@
     
     self.qrcodeView=[[QrcodeView alloc]initWithFrame:CGRectNull scanImg:[UIImage imageNamed:@"scan"] lineImg:[UIImage imageNamed:@"scanRectangle"]];
     [self.qrcodeView createTopView:@"xxx" backImg:[UIImage imageNamed:@"back2"]];
+    [self.qrcodeView createGridView];
     self.qrcodeView.qrcodeViewDelegate=self;
     [self.view addSubview:self.qrcodeView];
     [self.qrcodeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -32,7 +33,6 @@
     
     NSString *ipStr = [[GetIpAddress getIPAddresses] objectForKey:@"en0/ipv4"];
     NSLog(@"%@",ipStr);
-    
 }
 
 

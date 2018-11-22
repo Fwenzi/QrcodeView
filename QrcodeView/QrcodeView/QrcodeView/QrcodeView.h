@@ -11,7 +11,7 @@
 @protocol QrcodeViewDelegate <NSObject>
 
 /** 返回参数 */
--(void)QrcodeViewBackStr:(NSString *)backStr ifSuccess:(BOOL)ifSuccess;
+- (void)QrcodeViewBackStr:(NSString *)backStr ifSuccess:(BOOL)ifSuccess;
 
 @end
 
@@ -20,15 +20,17 @@
 @property (nonatomic, weak)id<QrcodeViewDelegate>qrcodeViewDelegate;
 
 /** 初始化 */
--(instancetype)initWithFrame:(CGRect)frame scanImg:(UIImage *)scanImg lineImg:(UIImage *)lineImg;
+- (instancetype)initWithFrame:(CGRect)frame scanImg:(UIImage *)scanImg lineImg:(UIImage *)lineImg;
 
 /** 是否创建头部 */
--(void)createTopView:(NSString *)TopStr backImg:(UIImage *)backImg;
+- (void)createTopView:(NSString *)TopStr backImg:(UIImage *)backImg;
+
+- (void)createGridView;
 
 /** 头部返回事件 */
 @property (nonatomic) dispatch_block_t backBlock;
 
 /** 重新扫描 */
--(void)reStartRunning;
+- (void)reStartRunning;
 
 @end

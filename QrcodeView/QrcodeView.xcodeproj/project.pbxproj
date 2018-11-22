@@ -191,7 +191,6 @@
 				8E15DA191FE0BD8800E9D5B1 /* Frameworks */,
 				8E15DA1A1FE0BD8800E9D5B1 /* Resources */,
 				1D23EB95C822A122196CA76C /* [CP] Embed Pods Frameworks */,
-				AD313B06244DC844ED06C351 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,21 +328,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QrcodeView/Pods-QrcodeView-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD313B06244DC844ED06C351 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QrcodeView/Pods-QrcodeView-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C1F03B46E041E6E009E7ABB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,7 +444,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
