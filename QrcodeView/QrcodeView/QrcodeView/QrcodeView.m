@@ -57,6 +57,7 @@
 //        [self setupCamera];
         [self performSelector:@selector(setupCamera) withObject:nil afterDelay:0.2];
     }
+    
     return self;
 }
 
