@@ -110,12 +110,12 @@ UIBezierPath *pathLine = [UIBezierPath bezierPath];
 }
 ```
 ### 2.5. 性能结果
-绘制方法 | CPU 占用 % | 时间占用最大 % | Duration | 内存占用% | FPS (MAX 60)
-:----------- | :---------- | :----------- | -----------:| :-----------: | -----------:
-多个 CALayer      | 4% | 35% | 24 sec | 0.74%  |  20
-多个 CAShapeLayer | 4% | 12% | 12 sec | 0.74%  |  17
-一个 CAShapeLayer      | 4% | 9% | 9 sec | 0.74%  |  14
-CGContextRef      | 4% | 8% | 14 sec | 0.93%  |  17
+绘制方法 | CPU 占用 % | 时间占用最大 %  | 内存占用% 
+:----------- | :---------- | :----------- | -----------:| 
+多个 CALayer      | 4% | 35%  | 0.74%  
+多个 CAShapeLayer | 4% | 12%  | 0.74%  
+一个 CAShapeLayer      | 4% | 9% | 0.74%  
+CGContextRef      | 4% | 8%  | 0.93%  
 
 * 详细截图见 GitHub：[QrcodeView](https://github.com/Fwenzi/QrcodeView)
  
