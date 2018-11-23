@@ -42,27 +42,6 @@ void (^addLineWidthRect)(CGRect rect) = ^(CGRect rect) {
 
 ### 2.2. 其他方法-多个 CAShapeLayer 绘制 path_
 ```
-UIBezierPath *pathLine = [UIBezierPath bezierPath];
-    void (^addLineWidthRect)(CGPoint rect,CGPoint rects) = ^(CGPoint rect,CGPoint rects) {
-        [pathLine moveToPoint:rect];
-        [pathLine addLineToPoint:rects];
-    };
-    for (int i=0; i<widthView; i+=size) {
-        addLineWidthRect(CGPointMake(i, 0),CGPointMake(i, heightView));
-    }
-    for (int i=0; i<heightView; i+=size) {
-        addLineWidthRect(CGPointMake(0, i),CGPointMake(widthView, i));
-    }
-    CAShapeLayer *layerLine= [CAShapeLayer layer];
-    layerLine.path=pathLine.CGPath;
-    layerLine.lineWidth=0.5;
-    layerLine.lineCap=kCALineCapRound;
-    layerLine.strokeColor=[UIColor blueColor].CGColor;
-    [self.scanImgV.layer addSublayer:layerLine];
-```
-
-### 2.3. 卡顿方法-一个 CAShapeLayer 绘制 path_
-```
 void (^addLineWidthRect)(CGPoint rect,CGPoint rects) = ^(CGPoint   rect,CGPoint rects) {
         UIBezierPath *pathLine = [UIBezierPath bezierPath];
         [pathLine moveToPoint:rect];
@@ -82,6 +61,27 @@ void (^addLineWidthRect)(CGPoint rect,CGPoint rects) = ^(CGPoint   rect,CGPoint 
     for (int i=0; i<heightView; i+=size) {
         addLineWidthRect(CGPointMake(0, i),CGPointMake(widthView, i));
     }
+```
+
+### 2.3. 卡顿方法-一个 CAShapeLayer 绘制 path_
+```
+UIBezierPath *pathLine = [UIBezierPath bezierPath];
+    void (^addLineWidthRect)(CGPoint rect,CGPoint rects) = ^(CGPoint rect,CGPoint rects) {
+        [pathLine moveToPoint:rect];
+        [pathLine addLineToPoint:rects];
+    };
+    for (int i=0; i<widthView; i+=size) {
+        addLineWidthRect(CGPointMake(i, 0),CGPointMake(i, heightView));
+    }
+    for (int i=0; i<heightView; i+=size) {
+        addLineWidthRect(CGPointMake(0, i),CGPointMake(widthView, i));
+    }
+    CAShapeLayer *layerLine= [CAShapeLayer layer];
+    layerLine.path=pathLine.CGPath;
+    layerLine.lineWidth=0.5;
+    layerLine.lineCap=kCALineCapRound;
+    layerLine.strokeColor=[UIColor blueColor].CGColor;
+    [self.scanImgV.layer addSublayer:layerLine];
 ```
 
 ### 2.4. 卡顿方法- CGContextRef 绘制_
